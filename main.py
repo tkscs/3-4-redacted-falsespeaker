@@ -1,7 +1,17 @@
 def redact(original_string):
     new_string = ""
     for word in original_string.split(" "):
-        # YOUR CODE HERE
+        def redact(original_string):
+            new_string = ""
+    for word in original_string.split(" "):
+        stripped = word.strip(".,!?;:\"()—")
+        
+        if stripped.istitle():
+            new_string += "[Redacted] "
+        else:
+            new_string += word + " "
+            
+    return new_string.strip()
     return new_string
 
 eb_bio = "Erin came to Kehillah after getting her PhD in Cognitive Science \
